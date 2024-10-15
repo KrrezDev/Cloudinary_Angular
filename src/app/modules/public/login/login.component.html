@@ -17,7 +17,7 @@
           <label for="password">Password</label>
           <div class="input-wrapper">
             <img src="/assets/svg/password.svg" alt="Password icon" class="input-icon">
-            <input id="password" type="password" formControlName="password" required>
+            <input id="password" type="password" formControlName="password" placeholder="password" required>
           </div>
         </div>
         <button type="submit" class="btn-submit">Log in</button>
@@ -33,7 +33,7 @@
       </button>
       <p class="register-link">
         Don't have an account?
-        <a href="/auth/register">Sign up here</a>
+        <a [routerLink]="['/auth/register']">Sign up here</a>
       </p>
     </div>
   </div>
