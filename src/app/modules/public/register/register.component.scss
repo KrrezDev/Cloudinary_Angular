@@ -155,6 +155,9 @@ $secondary-color: #6FA141;
       .login-link {
         font-size: 0.875rem;
         color: $text-color;
+        cursor: pointer;
+        text-decoration: underline;
+        transition: all 0.3s ease;
         a {
           color: $accent-color;
           font-weight: 600;

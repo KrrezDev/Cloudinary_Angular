@@ -96,7 +96,7 @@ $secondary-color: #6FA141;
         font-size: 1rem;
         font-weight: 600;
         cursor: pointer;
-        transition: background 0.3s;
+        transition: all 0.3s ease;
         font-family: 'Montserrat', sans-serif;
         &:hover {
           background: darken($accent-color, 10%);
@@ -153,8 +153,11 @@ $secondary-color: #6FA141;
       }
 
       .register-link {
+        cursor: pointer;
         font-size: 0.875rem;
         color: $text-color;
+        text-decoration: underline;
+        transition: all 0.3s ease;
         a {
           color: $accent-color;
           font-weight: 600;

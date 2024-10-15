@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {AuthService} from "../../../../services/auth.service";
+import { AuthService } from "../../../../services/auth.service";
 
 @Component({
   selector: 'app-register',
@@ -11,6 +11,7 @@ import {AuthService} from "../../../../services/auth.service";
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   errorMessage: string = '';
+  showHorrorTransition: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -49,9 +50,7 @@ export class RegisterComponent implements OnInit {
       this.authService.register(userData).subscribe(
         response => {
           console.log('Registration successful', response);
-          // Guarda el token en el localStorage
           localStorage.setItem('token', response.token);
-          // Redirige a /menu
           this.router.navigate(['/menu']);
         },
         error => {
@@ -62,5 +61,9 @@ export class RegisterComponent implements OnInit {
     } else {
       this.errorMessage = 'Please fill all fields correctly.';
     }
+  }
+
+  navigateToLogin() {
+    this.showHorrorTransition = true;
   }
 }
